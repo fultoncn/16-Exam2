@@ -2,8 +2,8 @@
 Exam 2, problem 1.
 
 Authors: David Mutchler, Dave Fisher, Matt Boutell, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.  April 2018.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Colleen Fulton.  April 2018.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
 def main():
@@ -12,7 +12,7 @@ def main():
 
 
 ###############################################################################
-# TODO: 2.  READ the code of the  Rect  class below.
+# DONE: 2.  READ the code of the  Rect  class below.
 #
 #   Once you are confident that you understand the  Rect  class and its code,
 #   change the TO-DO for this problem to DONE.
@@ -29,12 +29,23 @@ class Rect(object):
 def run_test_problem1():
     """ Tests the   problem1   function. """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement at least 2 tests of the  problem1  function.
+    # DONE: 3. Implement at least 2 tests of the  problem1  function.
     # -------------------------------------------------------------------------
     print()
     print('--------------------------------------------------')
     print('Testing the   problem1   function:')
     print('--------------------------------------------------')
+    # test one
+    rectangles = [Rect(5, 5), Rect(1, 1)]
+    actual = problem1(rectangles)
+    print('Expected:', 26)
+    print('Actual:', actual)
+    print()
+    # test two
+    rectangles = [Rect(5, 10), Rect(4, 3), Rect(100, 7)]
+    actual = problem1(rectangles)
+    print('Expected:', 762)
+    print('Actual:', actual)
 
 
 def problem1(rectangles):
@@ -53,9 +64,14 @@ def problem1(rectangles):
     :return: int
     """
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     # -------------------------------------------------------------------------
-
+    total_area = 0
+    for k in range(len(rectangles)):
+        which_rect = rectangles[k]
+        area = which_rect.h*which_rect.w
+        total_area = total_area + area
+    return total_area
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
